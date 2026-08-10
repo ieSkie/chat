@@ -1,5 +1,6 @@
 import { useState } from "react";
-import ReactMarkdown from "react-markdown";
+import MessageList from "./components/MessageList";
+import ChatInput from "./components/ChatInput";
 
 function App() {
   const [input, setInput] = useState("");
@@ -22,15 +23,8 @@ function App() {
   }
   return (
     <div>
-      <input value={input} onChange={(e) => setInput(e.target.value)} />
-      <button onClick={sendMessage}>Отправить</button>
-      <div>
-        {messages.map((msg, index) => (
-          <div key={index}>
-            {msg.role}: <ReactMarkdown>{msg.text}</ReactMarkdown>
-          </div>
-        ))}
-      </div>
+      <ChatInput input={input} setInput={setInput} sendMessage={sendMessage} />
+      <MessageList messages={messages} />
     </div>
   );
 }
