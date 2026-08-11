@@ -2,8 +2,6 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 dotenv.config();
-console.log("KEY:", process.env.GEMINI_API_KEY);
-console.log("MODEL:", process.env.MODEL);
 const app = express();
 const port = 3000;
 

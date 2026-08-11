@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.message ul,
+.message ol {
+  padding-left: 20px;
+  margin: 4px 0;
+}
+.chat-app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.messages-container {
+  margin: 0 auto;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  max-width: 700px;
+  width: 100%;
+}
+.chat-input {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+}
+.chat-input input {
+  flex: 1;
+  border-radius: 10px;
+  border: 2px solid grey;
+  padding: 8px 12px;
+}
+
+.chat-input button {
+  padding: 8px 16px;
+  border-radius: 10px;
+}
+.message {
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 70%; /* чтобы сообщение не растягивалось на всю ширину колонки */
+}
+
+.message.user {
+  align-self: flex-end; /* подумай, flex-end или flex-start? */
+  background-color: rgb(181, 170, 170);
+}
+
+.message.bot {
+  align-self: flex-start;
+  background-color: rgb(230, 230, 230);
+}

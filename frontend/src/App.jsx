@@ -1,11 +1,15 @@
 import { useState } from "react";
+import "./App.css";
 import MessageList from "./components/MessageList";
 import ChatInput from "./components/ChatInput";
 
 function App() {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   async function sendMessage() {
+    if (!input.trim()) return;
+    setIsLoading(true);
     setMessages([...messages, { role: "user", text: input }]);
     setInput("");
 
@@ -20,11 +24,12 @@ function App() {
       { role: "user", text: input },
       { role: "bot", text: data.reply },
     ]);
+    setIsLoading(false);
   }
   return (
-    <div>
+    <div className="chat-app">
+      <MessageList messages={messages} isLoading={isLoading} />
       <ChatInput input={input} setInput={setInput} sendMessage={sendMessage} />
-      <MessageList messages={messages} />
     </div>
   );
 }
