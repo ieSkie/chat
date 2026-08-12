@@ -34,6 +34,7 @@ function App() {
         setInput={setInput}
         sendMessage={sendMessage}
         isLoading={isLoading}
+        placeholder="Write a message..."
       />
     </div>
   );

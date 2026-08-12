@@ -58,3 +58,11 @@ body {
   align-self: flex-start;
   background-color: rgb(230, 230, 230);
 }
+
+.empty-state {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: gray;
+}
