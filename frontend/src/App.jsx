@@ -28,7 +28,7 @@ function App() {
   }
   return (
     <div className="chat-app">
-      <MessageList messages={messages} />
+      <MessageList messages={messages} isLoading={isLoading} />
       <ChatInput
         input={input}
         setInput={setInput}
