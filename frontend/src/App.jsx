@@ -29,7 +29,12 @@ function App() {
   return (
     <div className="chat-app">
       <MessageList messages={messages} />
-      <ChatInput input={input} setInput={setInput} sendMessage={sendMessage} />
+      <ChatInput
+        input={input}
+        setInput={setInput}
+        sendMessage={sendMessage}
+        isLoading={isLoading}
+      />
     </div>
   );
 }
