@@ -28,7 +28,8 @@ export default function MessageList(props) {
         <>
           {props.messages.map((msg, index) => (
             <div className={`message ${msg.role}`} key={index}>
-              {msg.role}: <ReactMarkdown>{msg.text}</ReactMarkdown>
+              {msg.role === "user" ? "User🧑" : "Bot🤖"}
+              <ReactMarkdown>{msg.text}</ReactMarkdown>
             </div>
           ))}
           {props.isLoading && (
